@@ -26,7 +26,7 @@ func HandleConn(conn net.Conn) {
 		fmt.Printf("[%s]: %s\n", addr, string(buf[:n]))
 		// fmt.Println("len = ", len(string(buf[:n]))
 
-		if "exit" == string(buf[:n-1]) {
+		if "exit" == string(buf[:n-1]) { //为什么要n-1，因为nc测试，所以会带\n
 			fmt.Println(addr, "exit")
 			return
 		}
